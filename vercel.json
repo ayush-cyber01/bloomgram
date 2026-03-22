@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/bouquet", "destination": "/bouquet.html" },
+    { "source": "/view", "destination": "/view.html" },
+    { "source": "/garden", "destination": "/gallery.html" }
+  ]
+}
