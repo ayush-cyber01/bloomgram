@@ -196,45 +196,6 @@
       50% { transform: rotate(5deg) translateY(-5px); }
     }
 
-    /* How it works */
-    .how-it-works {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 3rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      opacity: 0;
-      animation: rise 1s ease forwards 1.7s;
-    }
-    .hiw-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      max-width: 120px;
-      text-align: center;
-    }
-    .hiw-icon { font-size: 1.6rem; }
-    .hiw-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--deep);
-    }
-    .hiw-desc {
-      font-size: 0.68rem;
-      color: var(--sage);
-      letter-spacing: 0.04em;
-      line-height: 1.4;
-    }
-    .hiw-arrow {
-      font-size: 1.2rem;
-      color: var(--mist);
-      flex-shrink: 0;
-    }
-    @media(max-width:500px){ .hiw-arrow { display: none; } }
-
     /* Footer */
     footer {
       position: fixed;
@@ -279,28 +240,6 @@
       <span>🪷</span>
       <span>🌼</span>
     </div>
-
-    <!-- How it works -->
-    <div class="how-it-works">
-      <div class="hiw-step">
-        <div class="hiw-icon">💐</div>
-        <div class="hiw-label">Pick flowers</div>
-        <div class="hiw-desc">Choose from roses, peonies, tulips &amp; more</div>
-      </div>
-      <div class="hiw-arrow">→</div>
-      <div class="hiw-step">
-        <div class="hiw-icon">✉️</div>
-        <div class="hiw-label">Add a message</div>
-        <div class="hiw-desc">Write something meaningful for them</div>
-      </div>
-      <div class="hiw-arrow">→</div>
-      <div class="hiw-step">
-        <div class="hiw-icon">🔗</div>
-        <div class="hiw-label">Share the link</div>
-        <div class="hiw-desc">One short link — they will love it</div>
-      </div>
-    </div>
-
   </main>
 
   <footer>
