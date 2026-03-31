@@ -175,11 +175,14 @@
   </footer>
 
   <script>
-    // Parse URL params
+    // Short code → emoji map (matches bouquet.html SHORT map)
+    const DECODE = {r:'🌹',p:'🌸',t:'🌷',s:'🌻',d:'🌼',l:'🪷',o:'🌺',h:'💐',a:'🌸',n:'🌹',c:'🌷',z:'🌺','1':'🌴','2':'🌿','3':'🍃'};
+
+    // Parse URL params — supports both new short (?f=r+p+s) and old (?flowers=rose,peony)
     const params = new URLSearchParams(location.search);
-    const flowersParam = params.get('flowers') || '';
+    const rawF    = params.get('f') || params.get('flowers') || '';
     const toParam = params.get('to') || '';
-    const msgParam = params.get('msg') || '';
+    const msgParam= params.get('m')  || params.get('msg') || '';
 
     // Set "to" name
     const toEl = document.getElementById('toName');
@@ -188,9 +191,10 @@
       document.title = `💐 a bouquet for ${toParam.trim()} — bloomgram`;
     }
 
-    // Render flowers
+    // Decode flowers — short codes use + separator, old format uses ,
+    const sep = rawF.includes('+') ? '+' : ',';
     const flowerWrap = document.getElementById('flowerWrap');
-    const flowers = flowersParam ? flowersParam.split(',').filter(Boolean) : [];
+    const flowers = rawF ? rawF.split(sep).filter(Boolean).map(c=>DECODE[c]||c) : [];
     if (flowers.length > 0) {
       flowerWrap.innerHTML = '';
       flowers.forEach((emoji, i) => {
